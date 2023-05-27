@@ -96,17 +96,6 @@
 
         </form>
 
-        <div>
-                genre : {{ gender }} <br>
-                poids : {{ weight }} <br>
-                taille :{{ height }} <br>
-                age : {{ age }} <br>
-                nap-level : {{ napLevel }} <br>
-                nap-coef : {{ napCoef }} <br>
-                metabase : {{ metabase}}<br>
-                dej : {{ dej }}<br>
-        </div>
-
 </section>
 </template>
 
