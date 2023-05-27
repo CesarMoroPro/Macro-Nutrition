@@ -29,6 +29,10 @@ header .connexion-button {
   height: 2em;
 }
 
+.global .infos-block {
+  margin-top: 4em;
+}
+
 .global {
   /*
   h2 {

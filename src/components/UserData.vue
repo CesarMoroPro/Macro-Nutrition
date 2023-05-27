@@ -1,12 +1,12 @@
 <template>
 <section class="add-user-data">
-        <p>Merci de renseigner les informations suivantes :</p>  
+        <h2>Vos informations</h2>
+        <p>Merci de renseigner les informations suivantes&nbsp;:</p>  
 
         <form class="data-form" method="POST">
                 <div class="data-block">
                 
                         <div class="data-div data-gender">
-                                <label class="data-label">Votre genre :</label>
                                 <input v-model="gender" class="data-input" type="radio" name="sex" value="man" id="boy" required> <!-- C'est l'attr "value" des <input type="radio"> qui est passé au Model dans la propriété "gender" -->
                                 <label class="data-label-proposition" for="boy">Homme</label>
                                 <input v-model="gender" class="data-input" type="radio" name="sex" value="woman" id="girl" required>
@@ -14,24 +14,21 @@
                         </div>
 
                         <div class="data-div data-weight">
-                                <label class="data-label">Votre poids :</label>
-                                <input v-model="weight" class="data-input" type="number" step="0.01" required> Kg (ex. : "87.60")
+                                <input v-model="weight" class="data-input" type="number" step="0.01" required placeholder="Votre poids en Kg"> Kg (ex. : "87.60")
                         </div>
 
                         <div class="data-div data-height">
-                                <label class="data-label">Votre taille :</label>
-                                <input v-model="height" class="data-input" type="number" step="0.01" required> m (ex. : "1.80")
+                                <input v-model="height" class="data-input" type="number" step="0.01" required placeholder="Votre taille en mètre"> m (ex. : "1.80")
                         </div>
                         
                         <div class="data-div data-age">
-                                <label class="data-label">Votre âge :</label>
-                                <input v-model="age" class="data-input" type="number" required> ans (ex. : "34"")
+                                <input v-model="age" class="data-input" type="number" required placeholder="Votre âge en années"> ans (ex. : "34"")
                         </div>
                         
                         <div class="data-div data-nap-level">
-                                <label class="data-label" for="nap">Votre niveau d'activité physique :</label>
+                                <label class="data-label" for="nap">Votre niveau d'activité physique&nbsp;:</label>
                                 <select v-model="napLevel" name="nap-name" id="nap-id" required> <!-- C'est l'attr "value" des <option></option> qui est passé au Model dans la propriété "napLevel"-->
-                                        <option>Veuillez choisir une option</option>
+                                        <option value="null">Sélectionnez votre niveau</option>
                                         <option value="inactif">Inactif</option>
                                         <option value="moderate">activité physique modérée</option>
                                         <option value="important">activité physique importante</option>
@@ -39,7 +36,7 @@
                                 </select>
 
                                 <div v-if="napLevel" class="data-div  data-nap-coef">
-                                        <p class="data-label display-none" type="number" required>À l'aide du tableau "Niveau d'Activité Physique", précisez le coefficient selon que vous soyez plus proche du niveau d'activité inférieur ou supérieur (ex. vous avez renseigné "activité physique forte". Si vous êtes plus proche du niveau inférieur, sélectionnez le coefficient 1.6. Si vous êtes plus proche du niveau supérieur, sélectionnez le coefficient 1.8). 
+                                        <p class="data-label">À l'aide du tableau "Niveau d'Activité Physique", précisez le coefficient selon que vous soyez plus proche du niveau d'activité inférieur ou supérieur (ex. vous avez renseigné "activité physique forte". Si vous êtes plus proche du niveau inférieur, sélectionnez le coefficient 1.6. Si vous êtes plus proche du niveau supérieur, sélectionnez le coefficient 1.8). 
                                         </p>
                                         <label class="data-label">Précisez votre coefficient :</label>
 
@@ -120,6 +117,9 @@ export default {
                         napCoef: null,
                         metabase: null,
                         dej: null,
+                        calProt: 4,
+                        calLip: 9,
+                        calGluc: 4,
                 }
         },
 

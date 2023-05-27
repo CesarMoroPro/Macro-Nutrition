@@ -2,8 +2,8 @@
         <HeaderComponent></HeaderComponent>
 
         <main class="global">
-                <h2>Vos informations</h2>
                 <UserDataComponent></UserDataComponent>
+                <InformationsComponent></InformationsComponent>
         </main>
 </template>
 
@@ -15,6 +15,7 @@ import 'reset-css';
 //* Import des SFC
 import HeaderComponent from './components/Header.vue';
 import UserDataComponent from './components/UserData.vue';
+import InformationsComponent from './components/Informations.vue';
 
 //* Déclaration du Model :
 export default {
@@ -22,6 +23,7 @@ export default {
         components: {
                 HeaderComponent,
                 UserDataComponent,
+                InformationsComponent,
         },
 }
 
