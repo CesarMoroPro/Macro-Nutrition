@@ -1,0 +1,28 @@
+body {
+        margin: 1.5em;
+
+        h1 {
+                width: 75%;
+                font-size: $h1-size;
+                margin-bottom: $gutter-regular;
+        }
+
+        .global {
+                h2 {
+                        font-size: $h2-size;
+                        margin-bottom: $gutter-small;
+                }
+
+                p {
+                        margin: $gutter-small 0;
+                }
+        }
+
+
+
+
+        //^ Classes générales
+        .display-none {
+                display: none;
+        }
+}

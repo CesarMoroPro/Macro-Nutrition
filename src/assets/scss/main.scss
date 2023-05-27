@@ -1,0 +1,17 @@
+//* Imports des node_modules :
+// Directement dans main.js
+
+
+//* Import SCSS (pattern 7-1)
+//^ Import des utils
+@import './utils/fonts';
+@import './utils/variables';
+
+//^ Import des bases
+@import './base/body';
+
+//^ Import des layouts
+@import './layouts/header';
+
+//^ Import des pages
+@import './pages/components/userData';

@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+body {
+  margin: 1.5em;
+}
+body h1 {
+  width: 75%;
+  font-size: 2.5em;
+  margin-bottom: 1em;
+}
+body .global h2 {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+body .global p {
+  margin: 0.5em 0;
+}
+body .display-none {
+  display: none;
+}
+
+header {
+  /*
+  h1 {
+           base.scss
+  }
+  */
+}
+header .connexion-button {
+  height: 2em;
+}
+
+.global {
+  /*
+  h2 {
+          base.scss
+  }
+  */
+}
+.global .add-user-data .data-div {
+  margin: 0.5em;
+}
+
+/*# sourceMappingURL=main.css.map */
