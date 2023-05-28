@@ -234,7 +234,7 @@
   margin-left: 25px;
 }
 .global .add-user-data ::placeholder {
-  color: #8B816F;
+  color: grey;
 }
 .global .add-user-data .icon-title {
   margin-left: 10px;
