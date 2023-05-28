@@ -208,8 +208,17 @@
   transform: translateX(0);
   transition: 0.3s transform linear, 0.3s height linear 0.5s;
 }
+.global .add-user-data .select-options-container {
+  margin-left: 25px;
+}
 .global .add-user-data ::placeholder {
   color: #8B816F;
+}
+.global .add-user-data .icon-nap-level {
+  margin-right: 10px;
+}
+.global .add-user-data .icon-right-arrow {
+  margin-top: 20px;
 }
 .global li {
   margin: 10px 0;

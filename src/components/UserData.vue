@@ -8,6 +8,8 @@
                         <div class="data-block">
                         
                                 <div class="data-div data-gender input-radio-div">
+                                        <span v-if="!genderUser"><font-awesome-icon :icon="['far', 'square']" /></span>
+                                        <span v-else><font-awesome-icon :icon="['far', 'square-check']" /></span>
                                         <label class="label-proposition input-radio-label" for="boy">
                                                 <input v-model="genderUser" class="data-input input-radio" type="radio" name="gender" value="man" id="boy" required> <!-- C'est l'attr "value" des <input type="radio"> qui est passé au Model dans la propriété "genderUser" -->
                                                 <span class="value">Homme</span>
@@ -18,20 +20,28 @@
                                                 <span class="value">Femme</span>        
                                         </label>
                                 </div>
-        
+                                
                                 <div class="data-div data-weight">
+                                        <span v-if="!weightUser"><font-awesome-icon :icon="['far', 'square']" /></span>
+                                        <span v-else><font-awesome-icon :icon="['far', 'square-check']" /></span>
                                         <input v-model="weightUser" class="data-input input-number" type="number" step="0.01" required placeholder="Votre poids en Kg"> Kg (ex. : "87.60")
                                 </div>
-        
+                                
                                 <div class="data-div data-height">
+                                        <span v-if="!heightUser"><font-awesome-icon :icon="['far', 'square']" /></span>
+                                        <span v-else><font-awesome-icon :icon="['far', 'square-check']" /></span>
                                         <input v-model="heightUser" class="data-input input-number" type="number" step="0.01" required placeholder="Votre taille en mètre"> m (ex. : "1.80")
                                 </div>
                                 
                                 <div class="data-div data-age">
+                                        <span v-if="!ageUser"><font-awesome-icon :icon="['far', 'square']" /></span>
+                                        <span v-else><font-awesome-icon :icon="['far', 'square-check']" /></span>
                                         <input v-model="ageUser" class="data-input input-number" type="number" required placeholder="Votre âge en années"> ans (ex. : "34"")
                                 </div>
                                 
                                 <div class="data-div data-nap-level">
+                                        <span v-if="!napLevelUser"><font-awesome-icon :icon="['far', 'square']" class="icon-nap-level"/></span>
+                                        <span v-else><font-awesome-icon :icon="['far', 'square-check']" /></span>
                                         <label class="data-label" for="nap">Votre niveau d'activité physique&nbsp;:</label>
                                         <select class="select-options-container" name="nap-name" id="nap-id" required v-model="napLevelUser"> <!-- C'est l'attr "value" des <option></option> qui est passé au Model dans la propriété "napLevelUser"-->
                                                 <option class="select-option" value="null">Sélectionnez votre niveau</option>
@@ -41,12 +51,14 @@
                                                 <option class="select-option" value="intense">activité physique intense</option>
                                         </select>
                                 </div>
-        
-                                <div v-if="napLevelUser" class="data-div  data-nap-coef">
+                                
+                                <div v-show="napLevelUser" class="data-div  data-nap-coef">
                                         <p>À l'aide du tableau "Niveau d'Activité Physique", précisez le coefficient selon que vous soyez plus proche du niveau d'activité inférieur ou supérieur.
-                                                <br>(ex. : vous avez renseigné "activité physique importante". Si vous êtes plus proche du niveau inférieur, sélectionnez le coefficient 1.8. Si vous êtes plus proche du niveau supérieur, sélectionnez le coefficient 1.9).</p>
+                                        <br>(ex. : vous avez renseigné "activité physique importante". Si vous êtes plus proche du niveau inférieur, sélectionnez le coefficient 1.8. Si vous êtes plus proche du niveau supérieur, sélectionnez le coefficient 1.9).</p>
                                         <p>Précisez votre coefficient&nbsp;:</p>
-
+                                        
+                                        <span v-if="!napCoefUser"><font-awesome-icon :icon="['far', 'square']" class="icon-nap-coef"/></span>
+                                        <span v-else><font-awesome-icon :icon="['far', 'square-check']" class="icon-nap-coef"/></span>
                                         <div class="data-nap-coef__level input-radio-div" v-if="napLevelUser == 'inactif'">
                                                 <label class="label-proposition input-radio-label" for="inactif-low">
                                                         <input v-model="napCoefUser" class="data-input input-radio" type="radio" name="nap" value="1.3" id="inactif-low" required>
@@ -95,6 +107,7 @@
                         </div>
         
                         <div class="validation-container">
+                                <span v-if="allDataUserCompleted"><font-awesome-icon :icon="['far', 'circle-right']" beat-fade size="2xl" class="icon-right-arrow"/></span>
                                 <button class="input-validate-button-container" v-if="allDataUserCompleted" @click="metabaseCalcul($event)">
                                         <span class="input-validate-button">Calculer mes résultats intermédiaires</span>
                                 </button>
