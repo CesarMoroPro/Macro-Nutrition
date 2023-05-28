@@ -42,7 +42,8 @@
                                 <div class="data-div data-nap-level">
                                         <span v-if="!napLevelUser"><font-awesome-icon :icon="['far', 'square']" class="icon-nap-level"/></span>
                                         <span v-else><font-awesome-icon :icon="['far', 'square-check']" /></span>
-                                        <label class="data-label" for="nap">Votre niveau d'activité physique&nbsp;:</label>
+                                        <label class="data-label" for="nap">Votre niveau d'activité physique (NAP)&nbsp;:</label>
+
                                         <select class="select-options-container" name="nap-name" id="nap-id" required v-model="napLevelUser"> <!-- C'est l'attr "value" des <option></option> qui est passé au Model dans la propriété "napLevelUser"-->
                                                 <option class="select-option" value="null">Sélectionnez votre niveau</option>
                                                 <option class="select-option" value="inactif">Inactif</option>
@@ -50,9 +51,37 @@
                                                 <option class="select-option" value="important">activité physique importante</option>
                                                 <option class="select-option" value="intense">activité physique intense</option>
                                         </select>
+
+                                        <table class="table-global">
+                                                <tr>
+                                                        <th class="table-head table-head__nap">NAP</th>
+                                                        <th class="table-head table-equival">Correspondance</th>
+                                                        <th class="table-head table-coef">Coefficients</th>
+                                                </tr>
+                                                <tr class="table-row table-row">
+                                                        <td class="table-cell table-cell__nap">Inactif</td>
+                                                        <td class="table-cell table-cell__equival">Travail et transport assis ; Aucune activité physique.</td>
+                                                        <td class="table-cell table-cell__coef">1.3 - 1.5</td>
+                                                </tr>
+                                                <tr class="table-row">
+                                                        <td class="table-cell table-cell__nap">Modéré</td>
+                                                        <td class="table-cell table-cell__equival">Travail assis avec petits déplacement ou travail debout ; Activités de loisirs de temps à autres.</td>
+                                                        <td class="table-cell table-cell__coef">1.6 - 1.7</td>
+                                                </tr>
+                                                <tr class="table-row">
+                                                        <td class="table-cell table-cell__nap">Important</td>
+                                                        <td class="table-cell table-cell__equival">Travail actif (ex. : infirmière), déplacements à pied ; Minimum 3h de sport par semaine.</td>
+                                                        <td class="table-cell table-cell__coef">1.8 - 1.9</td>
+                                                </tr>
+                                                <tr class="table-row table-row">
+                                                        <td class="table-cell table-cell__nap">Intense</td>
+                                                        <td class="table-cell table-cell__equival">Travail très actif et intense (ex. : travail de chantier), nombreux loisirs ; Minimum 6h de sport par semaine.</td>
+                                                        <td class="table-cell table-cell__coef">2 - 2.1</td>
+                                                </tr>
+                                        </table>
                                 </div>
                                 
-                                <div v-show="napLevelUser" class="data-div  data-nap-coef">
+                                <div class="data-div  data-nap-coef" v-show="!napLevelUser">
                                         <p>À l'aide du tableau "Niveau d'Activité Physique", précisez le coefficient selon que vous soyez plus proche du niveau d'activité inférieur ou supérieur.
                                         <br>(ex. : vous avez renseigné "activité physique importante". Si vous êtes plus proche du niveau inférieur, sélectionnez le coefficient 1.8. Si vous êtes plus proche du niveau supérieur, sélectionnez le coefficient 1.9).</p>
                                         <p>Précisez votre coefficient&nbsp;:</p>

@@ -259,5 +259,30 @@
   border: solid 1px white;
   padding: 5px;
 }
+.global .add-user-data .table-global {
+  margin: 1em 0;
+  border-collapse: collapse;
+  border: solid 1px rgba(255, 255, 255, 0.7);
+}
+.global .add-user-data .table-global .table-head__nap, .global .add-user-data .table-global .table-head__coef {
+  width: 25%;
+}
+.global .add-user-data .table-global .table-head__equival {
+  width: 50%;
+}
+.global .add-user-data .table-global .table-row {
+  border-color: seperate;
+  line-height: 1.5em;
+  border: solid 1px rgba(255, 255, 255, 0.7);
+}
+.global .add-user-data .table-global .table-cell__nap {
+  text-align: left;
+}
+.global .add-user-data .table-global .table-cell__equival {
+  text-align: justify;
+}
+.global .add-user-data .table-global .table-cell__coef {
+  text-align: right;
+}
 
 /*# sourceMappingURL=main.css.map */
