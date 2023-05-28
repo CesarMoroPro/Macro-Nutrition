@@ -7,12 +7,17 @@
         */
 
         .add-user-data {
+                margin-top: $gutter-regular;
 
-                .data-form {
+                .result-mb-and-dej, .user-wishes, .result-macros {
+                        margin-top: $gutter-extra-large;
+                }
+
+                .data-form, .wishes-form {
                         border: 1px solid $color-main;
                         border-radius: 3px;
 
-                        .data-div {
+                        .data-div, .wish-div {
                                 margin: $gutter-regular;
                         }
                 }
@@ -166,6 +171,10 @@
                 }
 
                 //* Icônes
+                .icon-title {
+                        margin-left: 10px;
+                }
+
                 .icon-nap-level {
                         margin-right: 10px;
                 }
@@ -173,9 +182,10 @@
                 .icon-right-arrow {
                         margin-top: 20px;
                 }
-        }
 
-        li {
-                margin: 10px 0;
+                //* Listes
+                li {
+                        margin: 10px 0;
+                }
         }
 }

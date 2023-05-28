@@ -1,6 +1,6 @@
 <template>
         <aside class="infos-block">
-                <h2 class="title-h2">Infos Pratiques</h2>
+                <h2 class="title-h2">Infos Pratiques<span class="icon-title icon-title__informations"><font-awesome-icon :icon="['far', 'circle-question']" /></span></h2>
                 <p class="source">Source : livre</p>
 
                 <p>&laquo;Une calorie est la quantité approximative d'énergie nécessaire pour augmenter d'un degré Celsius la températeur d'un gramme d'eau.&raquo;<br>

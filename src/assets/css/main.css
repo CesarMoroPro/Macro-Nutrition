@@ -73,6 +73,9 @@
 .global .infos-block {
   margin-top: 4em;
 }
+.global .infos-block .icon-title {
+  margin-left: 10px;
+}
 
 .global {
   /*
@@ -81,11 +84,17 @@
   }
   */
 }
-.global .add-user-data .data-form {
+.global .add-user-data {
+  margin-top: 1em;
+}
+.global .add-user-data .result-mb-and-dej, .global .add-user-data .user-wishes, .global .add-user-data .result-macros {
+  margin-top: 2.5em;
+}
+.global .add-user-data .data-form, .global .add-user-data .wishes-form {
   border: 1px solid #FFFADE;
   border-radius: 3px;
 }
-.global .add-user-data .data-form .data-div {
+.global .add-user-data .data-form .data-div, .global .add-user-data .data-form .wish-div, .global .add-user-data .wishes-form .data-div, .global .add-user-data .wishes-form .wish-div {
   margin: 1em;
 }
 .global .add-user-data .input-text, .global .add-user-data .input-number, .global .add-user-data .select-options-container {
@@ -214,13 +223,16 @@
 .global .add-user-data ::placeholder {
   color: #8B816F;
 }
+.global .add-user-data .icon-title {
+  margin-left: 10px;
+}
 .global .add-user-data .icon-nap-level {
   margin-right: 10px;
 }
 .global .add-user-data .icon-right-arrow {
   margin-top: 20px;
 }
-.global li {
+.global .add-user-data li {
   margin: 10px 0;
 }
 
