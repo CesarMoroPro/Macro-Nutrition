@@ -73,6 +73,16 @@
 .global .infos-block {
   margin-top: 4em;
 }
+.global .infos-block .source {
+  font-style: italic;
+  font-size: 0.75em;
+}
+.global .infos-block .quote {
+  font-style: italic;
+}
+.global .infos-block .info-div {
+  margin-top: 2.5em;
+}
 .global .infos-block .icon-title {
   margin-left: 10px;
 }
