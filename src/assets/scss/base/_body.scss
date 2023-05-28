@@ -1,28 +1,23 @@
-body {
-        margin: 1.5em;
+#app {
+        padding: $gutter-regular;
+        font-family: montserrat;
+        color: $color-main;
+        background-image: $gradient-from-dark-brown-to-middle-brown;
 
-        h1 {
+        .title-h1 {
                 width: 75%;
                 font-size: $h1-size;
                 margin-bottom: $gutter-regular;
         }
 
-        .global {
-                h2 {
-                        font-size: $h2-size;
-                        margin-bottom: $gutter-small;
-                }
-
-                p {
-                        margin: $gutter-small 0;
-                }
+        .title-h2 {
+                font-size: $h2-size;
+                margin-bottom: $gutter-small;
         }
 
-
-
-
-        //^ Classes générales
-        .display-none {
-                display: none;
+        p {
+                margin: $gutter-regular 0;
+                line-height: 1.4em;
+                text-align: justify;
         }
 }

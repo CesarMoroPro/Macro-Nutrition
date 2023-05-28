@@ -9,3 +9,13 @@ $font-main: 'Montserrat', sans-serif;
 $gutter-small: 0.5em;
 $gutter-regular: 1em;
 $gutter-large: 1.5em;
+
+//^ COLORS
+$color-main: #FFFADE;
+$blue-island: #0096C9;
+$grey-brown: #8B816F;
+
+// $gradient-from-blue-island-to-cyan: linear-gradient(to right, #0096c9, #0099ce, #009dd2, #00a0d7, #00a4dc, #00a7e0, #00abe5, #00aee9, #00b1ee, #00b5f3, #00b8f8, #00bcfd);
+// $gradient-tropical-cocktail: linear-gradient(to bottom, #f0724c, #f4833f, #f39632, #efa926, #e6bd1f, #dcc619, #d0ce18, #c3d71d, #b5d715, #a6d70e, #96d609, #85d609);
+//$gradient-from-dark-brown-to-light-brown: linear-gradient(to bottom, #2c0f06, #372018, #433127, #4f4238, #5b534b, #69625c, #77726d, #85827f, #989592, #aba8a5, #bfbcb9, #d3d0cd);
+$gradient-from-dark-brown-to-middle-brown: linear-gradient(to bottom, #2c0f06, #372018, #433127, #4f4238, #5b534b, #625c55, #69645f, #706d6a, #72706d, #747370, #777573, #797876);

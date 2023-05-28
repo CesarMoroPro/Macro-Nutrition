@@ -1,32 +1,73 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
-body {
-  margin: 1.5em;
+#app {
+  padding: 1em;
+  font-family: montserrat;
+  color: #FFFADE;
+  background-image: linear-gradient(to bottom, #2c0f06, #372018, #433127, #4f4238, #5b534b, #625c55, #69645f, #706d6a, #72706d, #747370, #777573, #797876);
 }
-body h1 {
+#app .title-h1 {
   width: 75%;
   font-size: 2.5em;
   margin-bottom: 1em;
 }
-body .global h2 {
+#app .title-h2 {
   font-size: 1.5em;
   margin-bottom: 0.5em;
 }
-body .global p {
-  margin: 0.5em 0;
-}
-body .display-none {
-  display: none;
+#app p {
+  margin: 1em 0;
+  line-height: 1.4em;
+  text-align: justify;
 }
 
-header {
-  /*
-  h1 {
-           base.scss
-  }
-  */
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
-header .connexion-button {
-  height: 2em;
+.header .connexion-button {
+  width: 25%;
+  min-width: 100px;
+  background: transparent;
+  color: #FFFADE;
+  border: none;
+  padding: 1em 0.5em;
+  text-transform: uppercase;
+  position: relative;
+  transition: 0.5s ease;
+}
+.header .connexion-button::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #FFFADE;
+  transition: 0.5s ease;
+}
+.header .connexion-button:hover {
+  color: #8B816F;
+  transition-delay: 0.5s;
+}
+.header .connexion-button:hover::before {
+  width: 100%;
+}
+.header .connexion-button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background-color: #FFFADE;
+  transition: 0.4s ease;
+  z-index: -1;
+}
+.header .connexion-button:hover::after {
+  height: 100%;
+  transition-delay: 0.4s;
+  color: aliceblue;
 }
 
 .global .infos-block {
@@ -35,13 +76,143 @@ header .connexion-button {
 
 .global {
   /*
-  h2 {
+  h2 class="title-h2" {
           base.scss
   }
   */
 }
-.global .add-user-data .data-div {
-  margin: 0.5em;
+.global .add-user-data .data-form {
+  border: 1px solid #FFFADE;
+  border-radius: 3px;
+}
+.global .add-user-data .data-form .data-div {
+  margin: 1em;
+}
+.global .add-user-data .input-text, .global .add-user-data .input-number, .global .add-user-data .select-options-container {
+  border-radius: 10px;
+  outline: 2px solid #FFFADE;
+  border: 0;
+  background-color: #FFFADE;
+  outline-offset: 3px;
+  padding: 10px 1rem;
+  margin: 10px 10px;
+  transition: 0.25s;
+}
+.global .add-user-data .input-radio-div {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  box-sizing: border-box;
+  padding: 0.25rem;
+  width: 300px;
+  font-size: 14px;
+}
+.global .add-user-data .input-radio-label {
+  flex: 1 1 auto;
+  text-align: center;
+}
+.global .add-user-data .input-radio {
+  display: none;
+}
+.global .add-user-data .input-radio .value {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.5rem 0;
+  color: rgb(51, 65, 85);
+  transition: all 0.15s ease-in-out;
+}
+.global .add-user-data .input-radio-label input:checked + .value {
+  background-color: #FFFADE;
+  color: #8B816F;
+  font-weight: 600;
+  padding: 5px;
+  border-radius: 3px;
+  outline: 2px solid #FFFADE;
+  outline-offset: 2px;
+}
+.global .add-user-data input:focus {
+  outline-offset: 5px;
+  background-color: #fff;
+}
+.global .add-user-data .validation-container {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.global .add-user-data .input-validate-button-container {
+  color: #FFFADE;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: transparent;
+}
+.global .add-user-data .input-validate-button {
+  border: none;
+  height: auto;
+  float: left;
+  transition: 0.5s linear;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  text-align: center;
+  margin: 15px 5px;
+  padding: 15px;
+  background: transparent;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+.global .add-user-data .input-validate-button:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 100%;
+  border-bottom: 4px solid transparent;
+  border-left: 4px solid transparent;
+  box-sizing: border-box;
+  transform: translateX(100%);
+}
+.global .add-user-data .input-validate-button:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  border-top: 4px solid transparent;
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  transform: translateX(-100%);
+}
+.global .add-user-data .input-validate-button:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+.global .add-user-data .input-validate-button:hover:before {
+  border-color: #8B816F;
+  height: 100%;
+  transform: translateX(0);
+  transition: 0.3s transform linear, 0.3s height linear 0.3s;
+}
+.global .add-user-data .input-validate-button:hover:after {
+  border-color: #262626;
+  height: 100%;
+  transform: translateX(0);
+  transition: 0.3s transform linear, 0.3s height linear 0.5s;
+}
+.global .add-user-data ::placeholder {
+  color: #8B816F;
+}
+.global li {
+  margin: 10px 0;
 }
 
 /*# sourceMappingURL=main.css.map */

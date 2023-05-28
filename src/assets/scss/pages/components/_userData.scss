@@ -1,16 +1,167 @@
 .global {
 
         /*
-        h2 {
+        h2 class="title-h2" {
                 base.scss
         }
         */
 
         .add-user-data {
 
-                .data-div {
+                .data-form {
+                        border: 1px solid $color-main;
+                        border-radius: 3px;
 
-                        margin: $gutter-small;
+                        .data-div {
+                                margin: $gutter-regular;
+                        }
                 }
+
+                .input-text, .input-number, .select-options-container {
+                        border-radius: 10px;
+                        outline: 2px solid $color-main;
+                        border: 0;
+                        background-color: $color-main;
+                        outline-offset: 3px;
+                        padding: 10px 1rem;
+                        margin: 10px 10px;
+                        transition: 0.25s;
+                }
+
+                //* Boutons radios
+                .input-radio-div {
+                        position: relative;
+                        display: flex;
+                        flex-wrap: wrap;
+                        border-radius: 0.5rem;
+                        background-color: transparent;
+                        box-sizing: border-box;
+                        padding: 0.25rem;
+                        width: 300px;
+                        font-size: 14px;
+                }
+
+                .input-radio-label {  
+                        flex: 1 1 auto;
+                        text-align: center;
+                }
+
+                .input-radio {
+                        display: none;
+                }
+
+                .input-radio .value {
+                        display: flex;
+                        cursor: pointer;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 0.5rem;
+                        border: none;
+                        padding: .5rem 0;
+                        color: rgba(51, 65, 85, 1);
+                        transition: all .15s ease-in-out;
+                }
+
+                .input-radio-label input:checked + .value {
+                        background-color: $color-main;
+                        color: $grey-brown;
+                        font-weight: 600;
+                        padding: 5px;
+                        border-radius: 3px;
+                        outline: 2px solid $color-main;
+                        outline-offset: 2px;
+                }
+                
+                //* Focus tout inputs confondus
+                input:focus {
+                        outline-offset: 5px;
+                        background-color: #fff;
+                }
+
+                //* Boutons validation de formulaires
+                .validation-container {
+                        width: 100%;
+                        margin: auto;
+                        display: flex;
+                        justify-content: center;
+                }
+
+                .input-validate-button-container {
+                        color: $color-main;
+                        text-decoration: none;
+                        cursor: pointer;
+                        outline: none;
+                        border: none;
+                        background: transparent;
+                }
+
+                .input-validate-button {
+                        border: none;
+                        height: auto;
+                        float: left;
+                        transition: .5s linear;
+                        position: relative;
+                        display: block;
+                        overflow: hidden;
+                        text-align: center;
+                        margin: 15px 5px;
+                        padding: 15px;
+                        background: transparent;
+                        text-transform: uppercase;
+                        font-weight: 900;
+                }
+
+                .input-validate-button:before {
+                        position: absolute;
+                        content: '';
+                        left: 0;
+                        bottom: 0;
+                        height: 4px;
+                        width: 100%;
+                        border-bottom: 4px solid transparent;
+                        border-left: 4px solid transparent;
+                        box-sizing: border-box;
+                        transform: translateX(100%);
+                }
+                      
+                .input-validate-button:after {
+                        position: absolute;
+                        content: '';
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 4px;
+                        border-top: 4px solid transparent;
+                        border-right: 4px solid transparent;
+                        box-sizing: border-box;
+                        transform: translateX(-100%);
+                }
+                      
+                .input-validate-button:hover {
+                        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+                }
+                      
+                .input-validate-button:hover:before {
+                        border-color: $grey-brown;
+                        height: 100%;
+                        transform: translateX(0);
+                        transition: .3s transform linear, .3s height linear .3s;
+                }
+                      
+                .input-validate-button:hover:after {
+                        border-color: #262626;
+                        height: 100%;
+                        transform: translateX(0);
+                        transition: .3s transform linear, .3s height linear .5s;
+                }
+
+                //* Placeholders des inputs text et number
+                ::placeholder {
+                        color: $grey-brown;
+                }
+        }
+
+        li {
+                margin: 10px 0;
         }
 }
