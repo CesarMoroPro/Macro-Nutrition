@@ -14,4 +14,8 @@ Si l'utilisateur a choisi un NAP, l'icône est cochée et les coefs + texte sont
 - Changer l'icône en non-checked
 
 ## TYPE NUMBER
-- Modifier les \<input> de type NUMBER car ils ne peuvent pas contenir de données négatives.
+- Modifier les \<input> de type NUMBER car ils ne peuvent pas contenir de données négatives (directement dans les balises HTML)
+- Faire une fonction custom JS pour empêcher l'écriture d'un nombre négatif, pour améliorer l'UX.
+
+## INPUTS
+- Changer la couleur des `placeholder`

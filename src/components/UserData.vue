@@ -24,19 +24,19 @@
                                 <div class="data-div data-weight">
                                         <span v-if="!weightUser"><font-awesome-icon :icon="['far', 'square']" /></span>
                                         <span v-else><font-awesome-icon :icon="['far', 'square-check']" /></span>
-                                        <input v-model="weightUser" class="data-input input-number" type="number" step="0.01" required placeholder="Votre poids en Kg"> Kg (ex. : "87.60")
+                                        <input v-model="weightUser" class="data-input input-number" type="number" step="0.01" min="0" required placeholder="Votre poids en Kg"> Kg (ex. : "87.60")
                                 </div>
                                 
                                 <div class="data-div data-height">
                                         <span v-if="!heightUser"><font-awesome-icon :icon="['far', 'square']" /></span>
                                         <span v-else><font-awesome-icon :icon="['far', 'square-check']" /></span>
-                                        <input v-model="heightUser" class="data-input input-number" type="number" step="0.01" required placeholder="Votre taille en mètre"> m (ex. : "1.80")
+                                        <input v-model="heightUser" class="data-input input-number" type="number" step="0.01" min="0" required placeholder="Votre taille en mètre"> m (ex. : "1.80")
                                 </div>
                                 
                                 <div class="data-div data-age">
                                         <span v-if="!ageUser"><font-awesome-icon :icon="['far', 'square']" /></span>
                                         <span v-else><font-awesome-icon :icon="['far', 'square-check']" /></span>
-                                        <input v-model="ageUser" class="data-input input-number" type="number" required placeholder="Votre âge en années"> ans (ex. : "34"")
+                                        <input v-model="ageUser" class="data-input input-number" type="number" min="0" required placeholder="Votre âge en années"> ans (ex. : "34"")
                                 </div>
                                 
                                 <div class="data-div data-nap-level">
@@ -145,7 +145,7 @@
                                         <br>(ex. : "0" pour aucun déficit, "5" pour 5% de déficit)</label>
                                         <br><span v-if="!deficitUser"><font-awesome-icon :icon="['far', 'square']" /></span>
                                         <span v-else><font-awesome-icon :icon="['far', 'square-check']" /></span>
-                                        <input v-model="deficitUser" class="data-input input-number" type="number" step="0.1" required placeholder="5">
+                                        <input v-model="deficitUser" class="data-input input-number" type="number" min="0" step="0.1" required placeholder="5">
                                 </div>
                                 
                                 <div class="wish-div">
@@ -153,7 +153,7 @@
                                                 <br>(ex. : "1.8" pour 1.8 g / kilo / jour )</label>
                                                 <br><span v-if="!protUser"><font-awesome-icon :icon="['far', 'square']" /></span>
                                                 <span v-else><font-awesome-icon :icon="['far', 'square-check']" /></span>
-                                                <input v-model="protUser" class="data-input input-number" type="number" step="0.1" required placeholder="1.8">
+                                                <input v-model="protUser" class="data-input input-number" type="number" min="0" step="0.1" required placeholder="1.8">
                                         </div>
                                         
                                         <div class="wish-div">
@@ -161,7 +161,7 @@
                                                         <br>(ex. : "1" pour 1 g / kilo / jour )</label>
                                                         <br><span v-if="!lipUser"><font-awesome-icon :icon="['far', 'square']" /></span>
                                                         <span v-else><font-awesome-icon :icon="['far', 'square-check']" /></span>
-                                                        <input v-model="lipUser" class="data-input input-number" type="number" step="0.1" required placeholder="1">
+                                                        <input v-model="lipUser" class="data-input input-number" type="number" min="0" step="0.1" required placeholder="1">
                                                 </div>
                                         </div>
                                         
