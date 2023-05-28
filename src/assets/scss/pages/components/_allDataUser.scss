@@ -22,6 +22,13 @@
                         }
                 }
 
+                .result-macros {
+
+                        &__dej {
+                                margin-top: $gutter-extra-large;
+                        }
+                }
+
                 .input-text, .input-number, .select-options-container {
                         border-radius: 10px;
                         outline: 2px solid $color-main;
@@ -186,6 +193,19 @@
                 //* Listes
                 li {
                         margin: 10px 0;
+                }
+
+                .element-list-macros {
+                        margin-top: 35px;
+                        margin-left: 20px;
+                        list-style: inside;
+
+                        &__important {
+                                font-weight: bold;
+                                color: white;
+                                border: solid 1px white;
+                                padding: 5px;
+                        }
                 }
         }
 }

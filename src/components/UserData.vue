@@ -115,7 +115,7 @@
                 </form>
         </div>
 
-        <div class="result-mb-and-dej" v-if="!dej"> <!-- le calcul de DEJ est le dernier de cette première étape, donc DEJ est calculé, elle est true -->
+        <div class="result-mb-and-dej" v-if="dej"> <!-- le calcul de DEJ est le dernier de cette première étape, donc DEJ est calculé, elle est true -->
                 <h2 class="title-h2">Résultats intermédiaires<span class="icon-title icon-title__result-inter"><font-awesome-icon :icon="['far', 'calendar-xmark']" /></span></h2>
                 
                 <div class="mb">
@@ -131,7 +131,7 @@
                 </div>
         </div>
         
-        <div class="user-wishes" v-if="!firstStepCompleted"> <!-- Il faut obligatoirement que DEJ soit true pour que la div des objectifs s'affiche -->
+        <div class="user-wishes" v-if="firstStepCompleted"> <!-- Il faut obligatoirement que DEJ soit true pour que la div des objectifs s'affiche -->
                 <h2 class="title-h2">Vos objectifs<span class="icon-title icon-title__whishesUSer"><font-awesome-icon :icon="['far', 'circle-dot']" /></span></h2>
                 <p>Recommandation Protéïnes : 1.6 g / kg / jour pour un maintien de masse musculaire, et 1.8 g / kg / jour pour une prise de masse (à condition de pratiquer une activité physique).<br>
                 Recommadation Lipides : 1 g / kg / jour.<br>
@@ -175,28 +175,28 @@
 
         </div>
 
-        <div class="result-macros" v-if="!secondStepCompleted">
+        <div class="result-macros" v-if="secondStepCompleted">
         <h2 class="title-h2">Voici vos macros<span class="icon-title icon-title__result-final"><font-awesome-icon :icon="['far', 'calendar-check']" /></span></h2>
         
-        <div class="mb">
-                <p>Avec le déficit calorique que vous avez fourni ({{ deficitUser }}%), vous devez consommer quotidiennement&nbsp;:</p>                             
-                        <ul>
-                                <li>{{ protTotalPerDay  }} grammes de protéïnes ;</li>
-                                <li>{{ lipTotalPerDay }} grammes de lipides ;</li>
-                                <li>{{ glucTotalPerDay }} grammes de glucides.</li>
-                        </ul>
-        </div>
+                <div class="result-macros__mb">
+                        <p>Avec le déficit calorique que vous avez fourni ({{ deficitUser }}%), vous devez consommer quotidiennement&nbsp;:</p>                             
+                                <ul>
+                                        <li class="element-list-macros">Protéïnes : <span class="element-list-macros__important">{{ protTotalPerDay  }} g</span> ;</li>
+                                        <li class="element-list-macros">Lipides : <span class="element-list-macros__important"> {{ lipTotalPerDay }} g</span> ;</li>
+                                        <li class="element-list-macros">Glucides : <span class="element-list-macros__important"> {{ glucTotalPerDay }} g</span>.</li>
+                                </ul>
+                </div>
 
-        <div class="dej">
-                <p>
-                        À titre informatif, ceci représente&nbsp;: 
-                        <ul>
-                                <li>{{ protCaloTotalPerDay  }} grammes de protéïnes ;</li>
-                                <li>{{ lipCaloTotalPerDay }} grammes de lipides ;</li>
-                                <li>{{ glucCaloTotalPerDay }} grammes de glucides.</li>
-                        </ul>
-                </p>
-        </div>
+                <div class="result-macros__dej">
+                        <p>
+                                À titre informatif, ceci représente&nbsp;: 
+                                <ul>
+                                        <li class="element-list-macros">Protéïnes : <span class="element-list-macros__important"> {{ protCaloTotalPerDay  }} calories</span> ;</li>
+                                        <li class="element-list-macros">Lipides : <span class="element-list-macros__important"> {{ lipCaloTotalPerDay }} calories</span> ;</li>
+                                        <li class="element-list-macros">Glucides : <span class="element-list-macros__important"> {{ glucCaloTotalPerDay }} calories</span>.</li>
+                                </ul>
+                        </p>
+                </div>
 
                 
         </div>

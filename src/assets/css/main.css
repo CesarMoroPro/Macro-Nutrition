@@ -107,6 +107,9 @@
 .global .add-user-data .data-form .data-div, .global .add-user-data .data-form .wish-div, .global .add-user-data .wishes-form .data-div, .global .add-user-data .wishes-form .wish-div {
   margin: 1em;
 }
+.global .add-user-data .result-macros__dej {
+  margin-top: 2.5em;
+}
 .global .add-user-data .input-text, .global .add-user-data .input-number, .global .add-user-data .select-options-container {
   border-radius: 10px;
   outline: 2px solid #FFFADE;
@@ -244,6 +247,17 @@
 }
 .global .add-user-data li {
   margin: 10px 0;
+}
+.global .add-user-data .element-list-macros {
+  margin-top: 35px;
+  margin-left: 20px;
+  list-style: inside;
+}
+.global .add-user-data .element-list-macros__important {
+  font-weight: bold;
+  color: white;
+  border: solid 1px white;
+  padding: 5px;
 }
 
 /*# sourceMappingURL=main.css.map */
