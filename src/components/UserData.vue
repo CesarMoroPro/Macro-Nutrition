@@ -42,7 +42,10 @@
                                 <div class="data-div data-nap-level">
                                         <span v-if="!napLevelUser"><font-awesome-icon :icon="['far', 'square']" class="icon-nap-level"/></span>
                                         <span v-else><font-awesome-icon :icon="['far', 'square-check']" /></span>
-                                        <label class="data-label" for="nap">Votre niveau d'activité physique (NAP)&nbsp;:</label>
+                                        <label class="data-label" for="nap">Votre niveau d'activité physique (NAP)&nbsp;:
+                                                <span class="icon-nap-and-coef-table-help" @click="openNapAndCoefTable" v-if="!napAndCoefTableIsOpen"><font-awesome-icon :icon="['far', 'circle-question']" size="xl" /></span>
+                                                <span class="icon-nap-and-coef-table-help" @click="closeNapAndCoefTable" v-else="napAndCoefTableIsOpen"><font-awesome-icon :icon="['far', 'circle-xmark']" size="xl" /></span>
+                                        </label>
 
                                         <select class="select-options-container" name="nap-name" id="nap-id" required v-model="napLevelUser"> <!-- C'est l'attr "value" des <option></option> qui est passé au Model dans la propriété "napLevelUser"-->
                                                 <option class="select-option" value="null">Sélectionnez votre niveau</option>
@@ -52,7 +55,7 @@
                                                 <option class="select-option" value="intense">activité physique intense</option>
                                         </select>
 
-                                        <table class="table-global">
+                                        <table class="table-global" v-show="napAndCoefTableIsOpen">
                                                 <tr>
                                                         <th class="table-head table-head__nap">NAP</th>
                                                         <th class="table-head table-equival">Correspondance</th>
@@ -250,6 +253,7 @@ export default {
                         ageWomanCoef: 4.737,
                         additionnalManCoef: 77.607,
                         additionnalWomanCoef: 667.051,
+                        napAndCoefTableIsOpen: false,
                         napLevelUser: null,
                         napCoefUser: null,
                         metabase: null,
@@ -312,6 +316,16 @@ export default {
                         this.glucCaloTotalPerDay = Math.round((this.glucTotalPerDay * this.glucCalo));
 
                         this.secondStepCompleted = true;
+                },
+
+                openNapAndCoefTable() {
+                        // La variable qui représente l'état "affiché" du tableau de nap passe à true
+                        this.napAndCoefTableIsOpen = true;
+                },
+
+                closeNapAndCoefTable() {
+                        // Inversement, la variable qui représente l'état "affiché" du tableau de nap repasse à false
+                        this.napAndCoefTableIsOpen = false;
                 },
         },
 

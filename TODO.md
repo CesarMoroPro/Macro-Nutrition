@@ -1,7 +1,7 @@
 #TODO LIST
 
 ## TABLEAU DES COEFS
-- Créer le tableau des coefs NAP
+- Créer le tableau des coefs NAP ✅
 - Réflechir à comment le présenter (affichage, masquage...)
 
 ## \<ASIDE\> INFOS PRATIQUES
