@@ -179,8 +179,9 @@
                                         <label class="label-proposition">Quel déficit calorique voulez-vous créer&nbsp;?
                                         <br>(ex. : "0" pour aucun déficit, "5" pour 5% de déficit)</label>
                                         <br><span><font-awesome-icon :icon="['far', 'square-check']" /></span>
-                                        <input v-model="deficitUser" class="data-input input-number deficit-input" type="number" min="0" step="0.1" placeholder="ex. : 4,5">
-                                </div>
+                                        <input class="data-input input-number deficit-input" type="number" min="0" step="0.1" placeholder="ex. : 4,5" v-model="deficitUser" >
+                                        <p v-if="deficitUser">Ceci représente une dette de {{ dej - dejMinusDeficit }} calories, et une DEJ de {{ dejMinusDeficit }}</p>
+                                </div> 
                                 
                                 <div class="wish-div">
                                         <label class="label-proposition">Quantité journalière de protéïnes, en grammes&nbsp;:
@@ -321,7 +322,7 @@ export default {
                 
                 dejAvecDeficitCalcul(e) {
                         e.preventDefault();
-                        this.dejMinusDeficit = (this.dej - (this.dej * 5 / 100));
+                        this.dejMinusDeficit = Math.round((this.dej - (this.dej * this.deficitUser / 100)));
                         
                         // Une fois le metabolisme calculé avec le déficit désiré, on calcule les macros
                         this.macrosCalcul();
@@ -351,6 +352,11 @@ export default {
         },
         
         watch: {
+                deficitUser() {
+                        this.dejMinusDeficit = Math.round((this.dej - (this.dej * this.deficitUser / 100)));
+                        return this.dej;
+                },
+
                 /* Pour le <SELECT> :
                 Le SELECT du NAP est rattaché à la  variable napLevelUser MAIS
                 par défaut, elle est à false, puisque la page est intialisé sur le faux choix "Sélectionnez votre niveau". 
