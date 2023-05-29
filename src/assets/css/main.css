@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 #app {
+  min-width: 365px;
   padding: 1em;
   font-family: montserrat;
   color: #FFFADE;
@@ -103,6 +104,19 @@
 .global .add-user-data .data-form, .global .add-user-data .wishes-form {
   border: 1px solid #FFFADE;
   border-radius: 3px;
+}
+.global .add-user-data .data-form .data-gender, .global .add-user-data .wishes-form .data-gender {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.global .add-user-data .data-form .data-gender__choice, .global .add-user-data .wishes-form .data-gender__choice {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-left: 1em;
 }
 .global .add-user-data .data-form .data-div, .global .add-user-data .data-form .wish-div, .global .add-user-data .wishes-form .data-div, .global .add-user-data .wishes-form .wish-div {
   margin: 1em;
@@ -238,6 +252,9 @@
 }
 .global .add-user-data .icon-title {
   margin-left: 10px;
+}
+.global .add-user-data .icon-gender {
+  margin-right: 10px;
 }
 .global .add-user-data .icon-nap-level {
   margin-right: 10px;

@@ -6,6 +6,7 @@
         }
         */
 
+        // Section de la page
         .add-user-data {
                 margin-top: $gutter-regular;
 
@@ -13,10 +14,28 @@
                         margin-top: $gutter-extra-large;
                 }
 
+                // Les deux formulaires
                 .data-form, .wishes-form {
                         border: 1px solid $color-main;
                         border-radius: 3px;
 
+                        // Div du genre uniquement
+                        .data-gender {
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+
+                                &__choice {
+                                        width: 70%;
+                                        display: flex;
+                                        flex-direction: row;
+                                        justify-content: space-between;
+                                        flex-wrap: wrap;
+                                        margin-left: $gutter-regular;
+                                }
+                        }
+
+                        // Chaque block contenant des inputs
                         .data-div, .wish-div {
                                 margin: $gutter-regular;
                         }
@@ -29,6 +48,7 @@
                         }
                 }
 
+                //* Input SAUF cutomisation des boutons radios
                 .input-text, .input-number, .select-options-container {
                         border-radius: 10px;
                         outline: 2px solid $color-main;
@@ -40,7 +60,7 @@
                         transition: 0.25s;
                 }
 
-                //* Boutons radios
+                //* Customisation des boutons radios
                 .input-radio-div {
                         position: relative;
                         display: flex;
@@ -180,6 +200,10 @@
                 //* Icônes
                 .icon-title {
                         margin-left: 10px;
+                }
+
+                .icon-gender {
+                        margin-right: 10px;
                 }
 
                 .icon-nap-level {

@@ -17,7 +17,8 @@ Si l'utilisateur a choisi un NAP, l'icône est cochée et les coefs + texte sont
 - ✅ Modifier les \<input> de type NUMBER car ils ne peuvent pas contenir de données négatives (directement dans les balises HTML)
 
 ## INPUTS
-- ✅ Changer la couleur des `placeholder`
+- ✅ Changer la couleur des `placeholder` en mode normal (donc "ex. : xx").
+- ❌ Changer la couleur des `placeholder` quand ils affichent le message "Valeur obligatoire".
 
 
 ## METHODS
@@ -29,5 +30,4 @@ Si l'utilisateur a choisi un NAP, l'icône est cochée et les coefs + texte sont
 
 # CODE RÉALISÉ
 
-## WACTHERS sur les inputs
-Les inputs type number sont 
+Légères retouches Html / Scss pour la div "genre de l'utilisateur"

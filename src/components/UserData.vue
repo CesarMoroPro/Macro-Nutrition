@@ -8,17 +8,20 @@
                         <div class="data-block">
                         
                                 <div class="data-div data-gender input-radio-div">
-                                        <span v-if="!genderUser"><font-awesome-icon :icon="['far', 'square']" /></span>
-                                        <span v-else><font-awesome-icon :icon="['far', 'square-check']" /></span>
-                                        <label class="label-proposition input-radio-label" for="boy">
-                                                <input v-model="genderUser" class="data-input input-radio" type="radio" name="gender" value="man" id="boy" required> <!-- C'est l'attr "value" des <input type="radio"> qui est passé au Model dans la propriété "genderUser" -->
-                                                <span class="value">Homme</span>
-                                        </label>
-                                        
-                                        <label class="label-proposition input-radio-label" for="girl">
-                                                <input v-model="genderUser" class="data-input input-radio" type="radio" name="gender" value="woman" id="girl" required>
-                                                <span class="value">Femme</span>        
-                                        </label>
+                                        <span class="icon-gender" v-if="!genderUser"><font-awesome-icon :icon="['far', 'square']" /></span>
+                                        <span class="icon-gender" v-else><font-awesome-icon :icon="['far', 'square-check']" /></span>
+                                        <p>Vous êtes :</p>
+                                        <div class="data-gender__choice">
+                                                <label class="label-proposition input-radio-label " for="boy">
+                                                        <input v-model="genderUser" class="data-input input-radio" type="radio" name="gender" value="man" id="boy" required> <!-- C'est l'attr "value" des <input type="radio"> qui est passé au Model dans la propriété "genderUser" -->
+                                                        <span class="value">un Homme</span>
+                                                </label>
+                                                
+                                                <label class="label-proposition input-radio-label" for="girl">
+                                                        <input v-model="genderUser" class="data-input input-radio" type="radio" name="gender" value="woman" id="girl" required>
+                                                        <span class="value">Une femme</span>        
+                                                </label>
+                                        </div>
                                 </div>
                                 
                                 <div class="data-div data-weight">
