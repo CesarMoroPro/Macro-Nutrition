@@ -181,7 +181,8 @@
                                         <br>(ex. : "0" pour aucun déficit, "5" pour 5% de déficit)</label>
                                         <br><span><font-awesome-icon :icon="['far', 'square-check']" /></span>
                                         <input class="data-input input-number deficit-input" type="number" min="0" step="0.1" placeholder="ex. : 4,5" v-model="deficitUser" >
-                                        <p v-if="deficitUser">Ceci représente une dette de {{ dej - dejMinusDeficit }} calories, et une DEJ de {{ dejMinusDeficit }}</p>
+                                        <br><span class="danger" v-show="deficitUser > 5">⚠️ Pour éviter les risques sur votre santé et maximiser les chances de résultats durables, un déficit supérieur à 5% est fortement déconseillé.</span>
+                                        <p v-if="deficitUser">Votre déficit calorique représente une dette de {{ dej - dejMinusDeficit }} calories, et une DEJ de {{ dejMinusDeficit }}</p>
                                 </div> 
                                 
                                 <div class="wish-div">

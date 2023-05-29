@@ -31,4 +31,10 @@
                 margin: 10px 0;
                 font-size: 0.75em;
         }
+
+        .danger {
+                font-weight: bold;
+                background-color: rgba(115, 0, 0, 0.7);
+                color: rgb(2255, 61, 61);
+        }
 }
