@@ -16,7 +16,6 @@ library.add(faSquare, faSquareCheck, faCircleRight, faRectangleList, faCircleDot
 //> Il faut maintenant créer un composant global pour pouvoir inclure le composant "FontAwesomeIcon" importé ci-dessus dans le montage de l'application (voir entre "createApp()" et ".mount()")
 
 
-
 createApp(App)
 .component('font-awesome-icon', FontAwesomeIcon)
 .mount('#app')

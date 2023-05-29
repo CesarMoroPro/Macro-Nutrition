@@ -1,21 +1,33 @@
 #TODO LIST
 
 ## TABLEAU DES COEFS
-- Créer le tableau des coefs NAP ✅
-- Réflechir à comment le présenter (affichage, masquage...)
+- ✅ Créer le tableau des coefs NAP
+- ✅ Réflechir à comment le présenter (affichage, masquage...)
 
 ## \<ASIDE\> INFOS PRATIQUES
-- Par défaut, les faire disparaître
-- Réfléchir également à l'affichage, masquage, et comment les présenter visuellement
+- ✅ Par défaut, les faire disparaître
+- ✅ Réfléchir également à l'affichage, masquage, et comment les présenter visuellement
 
 ## NAP LEVEL
 Si l'utilisateur a choisi un NAP, l'icône est cochée et les coefs + texte sont visibles. Mais si l'utilisateur revient sur le choix "Sélectionnez votre niveau", les éléments restent tels qu'ils sont. Or, dans pareil cas :
-- Faire disparaître le choix du coef + son texte supérieur
-- Changer l'icône en non-checked
+- ❌ Faire disparaître le choix du coef + son texte supérieur
+- ❌ Changer l'icône en non-checked
 
 ## TYPE NUMBER
-- Modifier les \<input> de type NUMBER car ils ne peuvent pas contenir de données négatives (directement dans les balises HTML) ✅
-- Faire une fonction custom JS pour empêcher l'écriture d'un nombre négatif, pour améliorer l'UX.
+- ✅ Modifier les \<input> de type NUMBER car ils ne peuvent pas contenir de données négatives (directement dans les balises HTML)
 
 ## INPUTS
-- Changer la couleur des `placeholder` ✅
+- ✅ Changer la couleur des `placeholder`
+
+
+## METHODS
+- ❌ Factoriser les méthodes `openNap...` et `closeNap`du SFC `UserData` avec les méthodes `open...` et `close...` du SFC `Informations`
+
+## WATCHERS
+- ❌ Factoriser les watchers qui servent à redéfinir les placeholders des inputs
+
+
+# CODE RÉALISÉ
+
+## WACTHERS sur les inputs
+Les inputs type number sont 

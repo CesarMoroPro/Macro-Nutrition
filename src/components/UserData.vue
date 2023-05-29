@@ -24,19 +24,19 @@
                                 <div class="data-div data-weight">
                                         <span v-if="!weightUser"><font-awesome-icon :icon="['far', 'square']" /></span>
                                         <span v-else><font-awesome-icon :icon="['far', 'square-check']" /></span>
-                                        <input v-model="weightUser" class="data-input input-number" type="number" step="0.01" min="0" required placeholder="Votre poids en Kg"> Kg (ex. : "87.60")
+                                        <input v-model="weightUser" class="data-input input-number weight-input" type="number" step="0.01" min="1" required placeholder="ex. : 83,60"> Kg (ex. : "87.60")
                                 </div>
                                 
                                 <div class="data-div data-height">
                                         <span v-if="!heightUser"><font-awesome-icon :icon="['far', 'square']" /></span>
                                         <span v-else><font-awesome-icon :icon="['far', 'square-check']" /></span>
-                                        <input v-model="heightUser" class="data-input input-number" type="number" step="0.01" min="0" required placeholder="Votre taille en mètre"> m (ex. : "1.80")
+                                        <input v-model="heightUser" class="data-input input-number height-input" type="number" step="0.01" min="1" required placeholder="ex. : 1,77"> m (ex. : "1.80")
                                 </div>
                                 
                                 <div class="data-div data-age">
                                         <span v-if="!ageUser"><font-awesome-icon :icon="['far', 'square']" /></span>
                                         <span v-else><font-awesome-icon :icon="['far', 'square-check']" /></span>
-                                        <input v-model="ageUser" class="data-input input-number" type="number" min="0" required placeholder="Votre âge en années"> ans (ex. : "34"")
+                                        <input v-model="ageUser" class="data-input input-number age-input" type="number" min="1" required placeholder="ex. : 32"> ans (ex. : "34"")
                                 </div>
                                 
                                 <div class="data-div data-nap-level">
@@ -84,7 +84,7 @@
                                         </table>
                                 </div>
                                 
-                                <div class="data-div  data-nap-coef" v-show="!napLevelUser">
+                                <div class="data-div  data-nap-coef" v-show="napLevelUser">
                                         <p>À l'aide du tableau "Niveau d'Activité Physique", précisez le coefficient selon que vous soyez plus proche du niveau d'activité inférieur ou supérieur.
                                         <br>(ex. : vous avez renseigné "activité physique importante". Si vous êtes plus proche du niveau inférieur, sélectionnez le coefficient 1.8. Si vous êtes plus proche du niveau supérieur, sélectionnez le coefficient 1.9).</p>
                                         <p>Précisez votre coefficient&nbsp;:</p>
@@ -165,9 +165,9 @@
         
         <div class="user-wishes" v-if="firstStepCompleted"> <!-- Il faut obligatoirement que DEJ soit true pour que la div des objectifs s'affiche -->
                 <h2 class="title-h2">Vos objectifs<span class="icon-title icon-title__whishesUSer"><font-awesome-icon :icon="['far', 'circle-dot']" /></span></h2>
-                <p>Recommandation Protéïnes : 1.6 g / kg / jour pour un maintien de masse musculaire, et 1.8 g / kg / jour pour une prise de masse (à condition de pratiquer une activité physique).<br>
-                Recommadation Lipides : 1 g / kg / jour.<br>
-                Pour une perte de poids, il est conseillé de déduire 5% maximum de votre Dépense Énergétique Journalière (=déficit calorique).</p>
+                <p>Recommandation Protéïnes : 1.6 g / kg / jour pour un maintien de masse musculaire, et 1.8 g / kg / jour pour une prise de masse (à condition de pratiquer une activité physique).</p>
+                <p>Recommadation Lipides : 1 g / kg / jour.</p>
+                <p>Pour une perte de poids, il est conseillé de déduire 5% maximum de votre Dépense Énergétique Journalière (=déficit calorique).</p>
 
                 <form class="wishes-form" method="POST">
                         <div class="wish-block">
@@ -175,9 +175,8 @@
                                 <div class="wish-div">
                                         <label class="label-proposition">Quel déficit calorique voulez-vous créer&nbsp;?
                                         <br>(ex. : "0" pour aucun déficit, "5" pour 5% de déficit)</label>
-                                        <br><span v-if="!deficitUser"><font-awesome-icon :icon="['far', 'square']" /></span>
-                                        <span v-else><font-awesome-icon :icon="['far', 'square-check']" /></span>
-                                        <input v-model="deficitUser" class="data-input input-number" type="number" min="0" step="0.1" required placeholder="5">
+                                        <br><span><font-awesome-icon :icon="['far', 'square-check']" /></span>
+                                        <input v-model="deficitUser" class="data-input input-number deficit-input" type="number" min="0" step="0.1" placeholder="ex. : 4,5">
                                 </div>
                                 
                                 <div class="wish-div">
@@ -185,7 +184,7 @@
                                                 <br>(ex. : "1.8" pour 1.8 g / kilo / jour )</label>
                                                 <br><span v-if="!protUser"><font-awesome-icon :icon="['far', 'square']" /></span>
                                                 <span v-else><font-awesome-icon :icon="['far', 'square-check']" /></span>
-                                                <input v-model="protUser" class="data-input input-number" type="number" min="0" step="0.1" required placeholder="1.8">
+                                                <input v-model="protUser" class="data-input input-number prot-input" type="number" min="0.1" step="0.1" required placeholder="ex. : 1,8">
                                         </div>
                                         
                                         <div class="wish-div">
@@ -193,7 +192,7 @@
                                                         <br>(ex. : "1" pour 1 g / kilo / jour )</label>
                                                         <br><span v-if="!lipUser"><font-awesome-icon :icon="['far', 'square']" /></span>
                                                         <span v-else><font-awesome-icon :icon="['far', 'square-check']" /></span>
-                                                        <input v-model="lipUser" class="data-input input-number" type="number" min="0" step="0.1" required placeholder="1">
+                                                        <input v-model="lipUser" class="data-input input-number lip-input" type="number" min="0.1" step="0.1" required placeholder="ex. : 1,5">
                                                 </div>
                                         </div>
                                         
@@ -276,6 +275,25 @@ export default {
                         secondStepCompleted: false,
                 }
         },
+        
+        computed: {
+                allDataUserCompleted() {
+                        if(this.genderUser && this.weightUser && this.heightUser && this.ageUser && this.napLevelUser && this.napCoefUser) {
+                                return true;
+                        }
+                },
+
+                /* Lorsque les objectifs utilisateurs sont définis, cette méthode se déclenche au clic.
+                Note : puisque l'utilisateur n'est pas obligé de choisir un déficit calorique, en cas de champ obligatoire, il devra entrer la valeur "0".
+                Or, "0" vaut false, ce qui bloquerait l'affichage du bouton pour déclencher cette méthode.
+                Donc seuls les inputs de Protéïnes et Lipides doivent être pris en compte dans la condition
+                */
+                allWishesUserCompleted() {
+                        // 
+                        if(this.protUser && this.lipUser) 
+                        return true;
+                },
+        },
 
         methods: {
                 metabaseCalcul(e) {
@@ -329,16 +347,81 @@ export default {
                 },
         },
 
-        computed: {
-                allDataUserCompleted() {
-                        if(this.genderUser && this.weightUser && this.heightUser && this.ageUser && this.napLevelUser && this.napCoefUser) {
-                                return true;
+        watch: {
+                /* J'utilise des watchers pour surveiller les variables USER (= variables qui dépendent de input, select...)
+                Je crée une interaction en fonction de ce que contient la variable USER en temps réel,
+                donc pas au moment de la validation du formulaire, mais bien pendant que l'utilisateur entre ses données
+                */
+
+                //weightUser = pour surveiller la variable poids
+                weightUser() {
+                        // si l'input du poids est à false, je crée une alerte dans le placeholder directement
+                        if (this.weightUser.length === 0) {
+                                // Je récupère l'input du poids
+                                const weightInput = document.querySelector('.weight-input');
+                                // Je change son placeholder
+                                weightInput.setAttribute('placeholder', "Valeur obligatoire");
+                                // Je change la couleur du placeholder
+                                const attr = weightInput.getAttribute('placeholder');
+                                /* ??? */
                         }
+
+                        /* Ici, je m'assure qu'avec un champ vide, la valeur de weightUser soit bien à false.
+                        Sans cette condition, lorsqu'une valeur est entrée puis supprimée, malgré le placeholder qui change avec la condition au-dessus,
+                        l'icône reste sélectionnée au lieu d'être vide
+                        */
                 },
 
-                allWishesUserCompleted() {
-                        if(this.deficitUser && this.protUser && this.lipUser) 
-                        return true;
+                /* Même chose avec heightUser
+                Pour les commentaires, voir le watcher weightUser
+                */
+                heightUser() {
+                        if (this.heightUser.length === 0) {
+                                const heightUser = document.querySelector('.height-input');
+                                heightUser.setAttribute('placeholder', "Valeur obligatoire");
+                                const attr = heightUser.getAttribute('placeholder');
+                                /* ??? */
+                        }
+
+                },
+
+                /* Même chose avec ageUser
+                Pour les commentaires, voir le watcher weightUser
+                */
+                ageUser() {
+                        if (this.ageUser.length === 0) {
+                                const ageUser = document.querySelector('.age-input');
+                                ageUser.setAttribute('placeholder', "Valeur obligatoire");
+                                const attr = ageUser.getAttribute('placeholder');
+                                /* ??? */
+                        }
+
+                },
+                
+                /* Même chose avec protUser
+                Pour les commentaires, voir le watcher weightUser
+                */
+                protUser() {
+                        if (this.protUser.length === 0) {
+                                const protUser = document.querySelector('.prot-input');
+                                protUser.setAttribute('placeholder', "Valeur obligatoire");
+                                const attr = protUser.getAttribute('placeholder');
+                                /* ??? */
+                        }
+
+                },
+                
+                /* Même chose avec lipUser
+                Pour les commentaires, voir le watcher weightUser
+                */
+                lipUser() {
+                        if (this.lipUser.length === 0) {
+                                const lipUser = document.querySelector('.lip-input');
+                                lipUser.setAttribute('placeholder', "Valeur obligatoire");
+                                const attr = lipUser.getAttribute('placeholder');
+                                /* ??? */
+                        }
+
                 },
         }
 }
