@@ -28,4 +28,4 @@ Si l'utilisateur a choisi un NAP, l'icône est cochée et les coefs + texte sont
 - ❌ Factoriser les watchers qui servent à redéfinir les placeholders des inputs
 
 ## CALCUL MACROS
-- ne prend pas en compte le déficit
+- ✅ ne prend pas en compte le déficit

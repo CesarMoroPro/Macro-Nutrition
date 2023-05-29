@@ -177,6 +177,7 @@
                         
                                 <div class="wish-div">
                                         <label class="label-proposition">Quel déficit calorique voulez-vous créer&nbsp;?
+                                        <br><span class="note">Note : le déficit impactera la quantité de glucides. Aucun impacte sur les protéïnes ni lipides.</span>
                                         <br>(ex. : "0" pour aucun déficit, "5" pour 5% de déficit)</label>
                                         <br><span><font-awesome-icon :icon="['far', 'square-check']" /></span>
                                         <input class="data-input input-number deficit-input" type="number" min="0" step="0.1" placeholder="ex. : 4,5" v-model="deficitUser" >
@@ -185,6 +186,7 @@
                                 
                                 <div class="wish-div">
                                         <label class="label-proposition">Quantité journalière de protéïnes, en grammes&nbsp;:
+                                                <br><span class="note">Note : la quantité de protéïnes impactera la quantité de glucides. Aucun impacte sur les lipides.</span>
                                                 <br>(ex. : "1.8" pour 1.8 g / kilo / jour )</label>
                                                 <br><span v-if="!protUser"><font-awesome-icon :icon="['far', 'square']" /></span>
                                                 <span v-else><font-awesome-icon :icon="['far', 'square-check']" /></span>
@@ -193,6 +195,7 @@
                                         
                                         <div class="wish-div">
                                                 <label class="label-proposition">Quantité journalière de lipides, en grammes&nbsp;:
+                                                        <br><span class="note">Note : la quantité de lipides impactera la quantité de glucides. Aucun impacte sur les protéïnes.</span>
                                                         <br>(ex. : "1" pour 1 g / kilo / jour )</label>
                                                         <br><span v-if="!lipUser"><font-awesome-icon :icon="['far', 'square']" /></span>
                                                         <span v-else><font-awesome-icon :icon="['far', 'square-check']" /></span>

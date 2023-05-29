@@ -20,6 +20,14 @@
   line-height: 1.4em;
   text-align: justify;
 }
+#app .source {
+  font-style: italic;
+  font-size: 0.75em;
+}
+#app .note {
+  margin: 10px 0;
+  font-size: 0.75em;
+}
 
 .header {
   display: flex;
@@ -73,10 +81,9 @@
 
 .global .infos-block {
   margin-top: 4em;
-}
-.global .infos-block .source {
-  font-style: italic;
-  font-size: 0.75em;
+  /*
+          .source // dans _body.scss
+  */
 }
 .global .infos-block .quote {
   font-style: italic;
@@ -93,6 +100,9 @@
   h2 class="title-h2" {
           base.scss
   }
+  */
+  /*
+  .note // _body.scss
   */
 }
 .global .add-user-data {
