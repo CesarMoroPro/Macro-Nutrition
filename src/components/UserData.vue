@@ -51,11 +51,11 @@
                                         </label>
 
                                         <select class="select-options-container" name="nap-name" id="nap-id" required v-model="napLevelUser"> <!-- C'est l'attr "value" des <option></option> qui est passé au Model dans la propriété "napLevelUser"-->
-                                                <option class="select-option" value="null">Sélectionnez votre niveau</option>
-                                                <option class="select-option" value="inactif">Inactif</option>
-                                                <option class="select-option" value="moderate">activité physique modérée</option>
-                                                <option class="select-option" value="important">activité physique importante</option>
-                                                <option class="select-option" value="intense">activité physique intense</option>
+                                                <option class="select-option-nap" value="null">Sélectionnez votre niveau</option>
+                                                <option class="select-option-nap" value="inactif">Inactif</option>
+                                                <option class="select-option-nap" value="moderate">activité physique modérée</option>
+                                                <option class="select-option-nap" value="important">activité physique importante</option>
+                                                <option class="select-option-nap" value="intense">activité physique intense</option>
                                         </select>
 
                                         <table class="table-global" v-show="napAndCoefTableIsOpen">
@@ -302,7 +302,7 @@ export default {
                 metabaseCalcul(e) {
                         e.preventDefault();
                         let metabaseResult = null;
-
+                        
                         if (this.genderUser === "man") {
                                 metabaseResult = ((this.weightUser * this.weightManCoef) + (this.heightUser * this.heightManCoef) - (this.ageUser * this.ageManCoef) + this.additionnalManCoef);
                         } else if (this.genderUser === "woman") {
@@ -312,45 +312,61 @@ export default {
                         this.metabase = Math.round(metabaseResult);
                         this.dejCalcul(this.metabase, this.napCoefUser);
                 },
-
+                
                 dejCalcul(mb, activity) {
                         const dejResult = mb * activity;
                         this.dej = Math.round(dejResult);
                         this.firstStepCompleted = true;
                 },
-
+                
                 dejAvecDeficitCalcul(e) {
                         e.preventDefault();
                         this.dejMinusDeficit = (this.dej - (this.dej * 5 / 100));
-
+                        
                         // Une fois le metabolisme calculé avec le déficit désiré, on calcule les macros
                         this.macrosCalcul();
                 },
-
+                
                 macrosCalcul() {
                         this.protTotalPerDay = Math.round((this.protUser * this.weightUser));
                         this.protCaloTotalPerDay = Math.round((this.protTotalPerDay * this.protCalo)); 
                         this.lipTotalPerDay = Math.round((this.lipUser * this.weightUser));
                         this.lipCaloTotalPerDay = Math.round((this.lipTotalPerDay * this.lipCalo));
-
+                        
                         this.glucTotalPerDay = Math.round(((this.dejMinusDeficit - (this.protCaloTotalPerDay + this.lipCaloTotalPerDay)) / this.glucCalo));
                         this.glucCaloTotalPerDay = Math.round((this.glucTotalPerDay * this.glucCalo));
-
+                        
                         this.secondStepCompleted = true;
                 },
-
+                
                 openNapAndCoefTable() {
                         // La variable qui représente l'état "affiché" du tableau de nap passe à true
                         this.napAndCoefTableIsOpen = true;
                 },
-
+                
                 closeNapAndCoefTable() {
                         // Inversement, la variable qui représente l'état "affiché" du tableau de nap repasse à false
                         this.napAndCoefTableIsOpen = false;
                 },
         },
-
+        
         watch: {
+                /* Pour le <SELECT> :
+                Le SELECT du NAP est rattaché à la  variable napLevelUser MAIS
+                par défaut, elle est à false, puisque la page est intialisé sur le faux choix "Sélectionnez votre niveau". 
+                Puis, une fois qu'un choix est fait, elle est à true puisque la value contient une string.
+                Or, si on revient sur le choix "Sélectionnez votre niveau", on lui a défini la valeur "null" qui est en réalité aussi une string et non l'objet null
+                Donc la valeur reste à true.
+                Il faut définir que si value vaut null (pas l'objet mais la string), alors la variable vaut false,
+                Or, grâce au v-model, la valeur est automatiquement enregistrée dans la variable donc
+                si la variable napLevelUser vaut "null", alors on redéfinit sa valeur à false
+                */
+               napLevelUser() {
+                        if(this.napLevelUser === "null") {
+                                this.napLevelUser = false;
+                        }
+               },
+
                 /* J'utilise des watchers pour surveiller les variables USER (= variables qui dépendent de input, select...)
                 Je crée une interaction en fonction de ce que contient la variable USER en temps réel,
                 donc pas au moment de la validation du formulaire, mais bien pendant que l'utilisateur entre ses données

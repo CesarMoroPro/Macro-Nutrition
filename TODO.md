@@ -10,8 +10,8 @@
 
 ## NAP LEVEL
 Si l'utilisateur a choisi un NAP, l'icône est cochée et les coefs + texte sont visibles. Mais si l'utilisateur revient sur le choix "Sélectionnez votre niveau", les éléments restent tels qu'ils sont. Or, dans pareil cas :
-- ❌ Faire disparaître le choix du coef + son texte supérieur
-- ❌ Changer l'icône en non-checked
+- ✅ Faire disparaître le choix du coef + son texte supérieur
+- ✅ Changer l'icône en non-checked
 
 ## TYPE NUMBER
 - ✅ Modifier les \<input> de type NUMBER car ils ne peuvent pas contenir de données négatives (directement dans les balises HTML)
@@ -26,8 +26,3 @@ Si l'utilisateur a choisi un NAP, l'icône est cochée et les coefs + texte sont
 
 ## WATCHERS
 - ❌ Factoriser les watchers qui servent à redéfinir les placeholders des inputs
-
-
-# CODE RÉALISÉ
-
-Légères retouches Html / Scss pour la div "genre de l'utilisateur"
