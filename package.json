@@ -14,6 +14,7 @@
                 "@fortawesome/fontawesome-svg-core": "^6.4.0",
                 "@fortawesome/free-regular-svg-icons": "^6.4.0",
                 "@fortawesome/vue-fontawesome": "^3.0.3",
+                "express": "^4.18.2",
                 "reset-css": "^5.0.1",
                 "sass": "^1.62.1",
                 "vue": "^3.2.47"

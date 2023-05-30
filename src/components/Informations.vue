@@ -1,8 +1,8 @@
 <template>
         <aside class="infos-block">
                 <h2 class="title-h2">Infos Pratiques
-                        <span class="icon-title icon-title__informations" @click="openModale" v-if="!informationsHelpAsideIsOpen"><font-awesome-icon :icon="['far', 'circle-question']" size="xl"/></span>
-                        <span class="icon-title icon-title__informations" @click="closeModale" v-else="informationsHelpAsideIsOpen"><font-awesome-icon :icon="['far', 'circle-xmark']" size="xl"/></span>
+                        <span class="icon-title icon-title__informations" @click="openModale" v-if="!informationsHelpAsideIsOpen"><font-awesome-icon :icon="['far', 'circle-question']" size="xl" fade /></span>
+                        <span class="icon-title icon-title__informations" @click="closeModale" v-else="informationsHelpAsideIsOpen"><font-awesome-icon :icon="['far', 'circle-xmark']" size="xl" fade /></span>
                 </h2>
 
                 <div class="infos-content" v-show="informationsHelpAsideIsOpen">

@@ -46,10 +46,10 @@
                                         <span v-if="!napLevelUser"><font-awesome-icon :icon="['far', 'square']" class="icon-nap-level"/></span>
                                         <span v-else><font-awesome-icon :icon="['far', 'square-check']" /></span>
                                         <label class="data-label" for="nap">Votre niveau d'activité physique (NAP)&nbsp;:
-                                                <span class="icon-nap-and-coef-table-help" @click="openNapAndCoefTable" v-if="!napAndCoefTableIsOpen"><font-awesome-icon :icon="['far', 'circle-question']" size="xl" /></span>
-                                                <span class="icon-nap-and-coef-table-help" @click="closeNapAndCoefTable" v-else="napAndCoefTableIsOpen"><font-awesome-icon :icon="['far', 'circle-xmark']" size="xl" /></span>
+                                                <span class="icon-nap-and-coef-table-help" @click="openNapAndCoefTable" v-if="!napAndCoefTableIsOpen"><font-awesome-icon :icon="['far', 'circle-question']"  size="xl" fade /></span>
+                                                <span class="icon-nap-and-coef-table-help" @click="closeNapAndCoefTable" v-else="napAndCoefTableIsOpen"><font-awesome-icon :icon="['far', 'circle-xmark']"  size="xl" fade /></span>
                                         </label>
-
+                                        
                                         <select class="select-options-container" name="nap-name" id="nap-id" required v-model="napLevelUser"> <!-- C'est l'attr "value" des <option></option> qui est passé au Model dans la propriété "napLevelUser"-->
                                                 <option class="select-option-nap" value="null">Sélectionnez votre niveau</option>
                                                 <option class="select-option-nap" value="inactif">Inactif</option>
@@ -57,7 +57,7 @@
                                                 <option class="select-option-nap" value="important">activité physique importante</option>
                                                 <option class="select-option-nap" value="intense">activité physique intense</option>
                                         </select>
-
+                                        
                                         <table class="table-global" v-show="napAndCoefTableIsOpen">
                                                 <tr>
                                                         <th class="table-head table-head__nap">NAP</th>
@@ -88,7 +88,10 @@
                                 </div>
                                 
                                 <div class="data-div  data-nap-coef" v-show="napLevelUser">
-                                        <p>À l'aide du tableau "Niveau d'Activité Physique", précisez le coefficient selon que vous soyez plus proche du niveau d'activité inférieur ou supérieur.
+                                        <p>À l'aide du tableau "Niveau d'Activité Physique"
+                                                <span class="icon-nap-and-coef-table-help" @click="openNapAndCoefTable" v-if="!napAndCoefTableIsOpen"><font-awesome-icon :icon="['far', 'circle-question']"  fade /></span>
+                                                <span class="icon-nap-and-coef-table-help" @click="closeNapAndCoefTable" v-else="napAndCoefTableIsOpen"><font-awesome-icon :icon="['far', 'circle-xmark']"  fade /></span>
+                                                précisez le coefficient selon que vous soyez plus proche du niveau d'activité inférieur ou supérieur.
                                         <br>(ex. : vous avez renseigné "activité physique importante". Si vous êtes plus proche du niveau inférieur, sélectionnez le coefficient 1.8. Si vous êtes plus proche du niveau supérieur, sélectionnez le coefficient 1.9).</p>
                                         <p>Précisez votre coefficient&nbsp;:</p>
                                         
@@ -142,9 +145,9 @@
                         </div>
         
                         <div class="validation-container">
-                                <span v-if="allDataUserCompleted"><font-awesome-icon :icon="['far', 'circle-right']" beat-fade size="2xl" class="icon-right-arrow"/></span>
+                                <span v-if="allDataUserCompleted"><font-awesome-icon :icon="['far', 'circle-right']" beat-fade size="2xl" class="icon-right-arrow" /></span>
                                 <button class="input-validate-button-container" v-if="allDataUserCompleted" @click="metabaseCalcul($event)">
-                                        <span class="input-validate-button">Calculer mes résultats intermédiaires</span>
+                                <span class="input-validate-button">Calculer mes résultats intermédiaires</span>
                                 </button>
                         </div>
                 </form>
