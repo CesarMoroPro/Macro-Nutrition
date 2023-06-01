@@ -1,4 +1,4 @@
-#TODO LIST
+#TODO FRONT-END
 
 ## TABLEAU DES COEFS
 - ✅ Créer le tableau des coefs NAP
@@ -29,3 +29,12 @@ Si l'utilisateur a choisi un NAP, l'icône est cochée et les coefs + texte sont
 
 ## CALCUL MACROS
 - ✅ ne prend pas en compte le déficit
+
+
+# TODO BACK END
+
+## Connexion API
+
+## Concevoir un schéma de récupérations de données
+
+## Concevoir un schéma pour distribuer les données reçues
