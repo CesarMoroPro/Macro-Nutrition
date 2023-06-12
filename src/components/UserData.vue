@@ -172,7 +172,7 @@
         <div class="user-wishes" v-if="firstStepCompleted"> <!-- Il faut obligatoirement que DEJ soit true pour que la div des objectifs s'affiche -->
                 <h2 class="title-h2">Vos objectifs<span class="icon-title icon-title__whishesUSer"><font-awesome-icon :icon="['far', 'circle-dot']" /></span></h2>
                 <p>Recommandation Protéïnes : 1.6 g / kg / jour pour un maintien de masse musculaire, et 1.8 g / kg / jour pour une prise de masse (à condition de pratiquer une activité physique).</p>
-                <p>Recommadation Lipides : 1 g / kg / jour.</p>
+                <p>Recommandation Lipides : 1 g / kg / jour.</p>
                 <p>Pour une perte de poids, il est conseillé de déduire 5% maximum de votre Dépense Énergétique Journalière (=déficit calorique).</p>
 
                 <form class="wishes-form" method="POST">
